@@ -1,0 +1,49 @@
+# Managed by puppet
+[puppetlabs-products]
+name=Puppet Labs Products El <%= scope.lookupvar('yum::params::puppetlabs_os_version') %> - $basearch
+baseurl=http://yum.puppetlabs.com/el/<%= scope.lookupvar('yum::params::puppetlabs_os_version') %>/products/$basearch
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-puppetlabs
+enabled=1
+gpgcheck=1
+priority=30
+
+[puppetlabs-deps]
+name=Puppet Labs Dependencies El <%= scope.lookupvar('yum::params::puppetlabs_os_version') %> - $basearch
+baseurl=http://yum.puppetlabs.com/el/<%= scope.lookupvar('yum::params::puppetlabs_os_version') %>/dependencies/$basearch
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-puppetlabs
+enabled=1
+gpgcheck=1
+priority=30
+
+[puppetlabs-devel]
+name=Puppet Labs Devel El <%= scope.lookupvar('yum::params::puppetlabs_os_version') %> - $basearch
+baseurl=http://yum.puppetlabs.com/el/<%= scope.lookupvar('yum::params::puppetlabs_os_version') %>/devel/$basearch
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-puppetlabs
+enabled=0
+gpgcheck=1
+priority=30
+
+[puppetlabs-products-source]
+name=Puppet Labs Products El <%= scope.lookupvar('yum::params::puppetlabs_os_version') %> - $basearch - Source
+baseurl=http://yum.puppetlabs.com/el/<%= scope.lookupvar('yum::params::puppetlabs_os_version') %>/products/SRPMS
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-puppetlabs
+failovermethod=priority
+enabled=0
+gpgcheck=1
+priority=30
+
+[puppetlabs-deps-source]
+name=Puppet Labs Source Dependencies El <%= scope.lookupvar('yum::params::puppetlabs_os_version') %> - $basearch - Source
+baseurl=http://yum.puppetlabs.com/el/<%= scope.lookupvar('yum::params::puppetlabs_os_version') %>/dependencies/SRPMS
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-puppetlabs
+enabled=0
+gpgcheck=1
+priority=30
+
+[puppetlabs-devel-source]
+name=Puppet Labs Devel El <%= scope.lookupvar('yum::params::puppetlabs_os_version') %> - $basearch - Source
+baseurl=http://yum.puppetlabs.com/el/<%= scope.lookupvar('yum::params::puppetlabs_os_version') %>/devel/SRPMS
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-puppetlabs
+enabled=0
+gpgcheck=1
+priority=30

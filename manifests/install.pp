@@ -4,7 +4,8 @@
 #
 class yum::install {
 
-  package { $::yum::package_name:
-    ensure => present,
+  # install yum plugins.
+  package { $::yum::plugin_package_name:
+    ensure => $::yum::plugin_package_ensure,
   }
 }

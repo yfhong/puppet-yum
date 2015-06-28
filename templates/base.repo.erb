@@ -1,0 +1,29 @@
+# Managed by puppet.
+[base]
+name=CentOS-$releasever - Base
+baseurl=http://<%= scope.lookupvar('yum::base_repo_mirror') %>/centos/$releasever/os/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-<%= scope.lookupvar('yum::params::repo_os_version') %>
+priority=10
+
+[updates]
+name=CentOS-$releasever - Updates
+baseurl=http://<%= scope.lookupvar('yum::base_repo_mirror') %>/centos/$releasever/updates/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-<%= scope.lookupvar('yum::params::repo_os_version') %>
+priority=10
+
+[extras]
+name=CentOS-$releasever - Extras
+baseurl=http://<%= scope.lookupvar('yum::base_repo_mirror') %>/centos/$releasever/extras/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-<%= scope.lookupvar('yum::params::repo_os_version') %>
+priority=10
+
+[centosplus]
+name=CentOS-$releasever - Plus
+baseurl=http://<%= scope.lookupvar('yum::base_repo_mirror') %>/centos/$releasever/centosplus/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-<%= scope.lookupvar('yum::params::repo_os_version') %>
+priority=11

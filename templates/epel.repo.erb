@@ -1,0 +1,48 @@
+# Managed by puppet
+[epel]
+name=Extra Packages for Enterprise Linux <%= scope.lookupvar('yum::params::epel_os_version') %> - $basearch
+baseurl=http://<%= scope.lookupvar('yum::epel_repo_mirror') %>/epel/<%= scope.lookupvar('yum::params::epel_os_version') %>/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
+priority=50
+
+[epel-debuginfo]
+name=Extra Packages for Enterprise Linux <%= scope.lookupvar('yum::params::epel_os_version') %> - $basearch - Debug
+baseurl=http://<%= scope.lookupvar('yum::epel_repo_mirror') %>/epel/<%= scope.lookupvar('yum::params::epel_os_version') %>/$basearch/debug
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
+gpgcheck=1
+priority=50
+
+[epel-source]
+name=Extra Packages for Enterprise Linux <%= scope.lookupvar('yum::params::epel_os_version') %> - $basearch - Source
+baseurl=http://<%= scope.lookupvar('yum::epel_repo_mirror') %>/epel/<%= scope.lookupvar('yum::params::epel_os_version') %>/SRPMS
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
+gpgcheck=1
+priority=50
+
+[epel-testing]
+name=Extra Packages for Enterprise Linux <%= scope.lookupvar('yum::params::epel_os_version') %> - Testing - $basearch
+baseurl=http://<%= scope.lookupvar('yum::epel_repo_mirror') %>/epel/testing/<%= scope.lookupvar('yum::params::epel_os_version') %>/$basearch
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
+priority=51
+
+[epel-testing-debuginfo]
+name=Extra Packages for Enterprise Linux <%= scope.lookupvar('yum::params::epel_os_version') %> - Testing - $basearch - Debug
+baseurl=http://<%= scope.lookupvar('yum::epel_repo_mirror') %>/epel/testing/<%= scope.lookupvar('yum::params::epel_os_version') %>/$basearch/debug
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
+gpgcheck=1
+priority=51
+
+[epel-testing-source]
+name=Extra Packages for Enterprise Linux <%= scope.lookupvar('yum::params::epel_os_version') %> - Testing - $basearch - Source
+baseurl=http://<%= scope.lookupvar('yum::epel_repo_mirror') %>/epel/testing/<%= scope.lookupvar('yum::params::epel_os_version') %>/SRPMS
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
+gpgcheck=1
+priority=51
