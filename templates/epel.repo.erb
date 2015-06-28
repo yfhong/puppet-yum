@@ -4,14 +4,14 @@ name=Extra Packages for Enterprise Linux <%= scope.lookupvar('yum::params::epel_
 baseurl=http://<%= scope.lookupvar('yum::epel_repo_mirror') %>/epel/<%= scope.lookupvar('yum::params::epel_os_version') %>/$basearch
 enabled=1
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
+gpgkey=https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
 priority=50
 
 [epel-debuginfo]
 name=Extra Packages for Enterprise Linux <%= scope.lookupvar('yum::params::epel_os_version') %> - $basearch - Debug
 baseurl=http://<%= scope.lookupvar('yum::epel_repo_mirror') %>/epel/<%= scope.lookupvar('yum::params::epel_os_version') %>/$basearch/debug
 enabled=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
+gpgkey=https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
 gpgcheck=1
 priority=50
 
@@ -19,7 +19,7 @@ priority=50
 name=Extra Packages for Enterprise Linux <%= scope.lookupvar('yum::params::epel_os_version') %> - $basearch - Source
 baseurl=http://<%= scope.lookupvar('yum::epel_repo_mirror') %>/epel/<%= scope.lookupvar('yum::params::epel_os_version') %>/SRPMS
 enabled=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
+gpgkey=https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
 gpgcheck=1
 priority=50
 
@@ -28,14 +28,14 @@ name=Extra Packages for Enterprise Linux <%= scope.lookupvar('yum::params::epel_
 baseurl=http://<%= scope.lookupvar('yum::epel_repo_mirror') %>/epel/testing/<%= scope.lookupvar('yum::params::epel_os_version') %>/$basearch
 enabled=0
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
+gpgkey=https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
 priority=51
 
 [epel-testing-debuginfo]
 name=Extra Packages for Enterprise Linux <%= scope.lookupvar('yum::params::epel_os_version') %> - Testing - $basearch - Debug
 baseurl=http://<%= scope.lookupvar('yum::epel_repo_mirror') %>/epel/testing/<%= scope.lookupvar('yum::params::epel_os_version') %>/$basearch/debug
 enabled=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
+gpgkey=https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
 gpgcheck=1
 priority=51
 
@@ -43,6 +43,6 @@ priority=51
 name=Extra Packages for Enterprise Linux <%= scope.lookupvar('yum::params::epel_os_version') %> - Testing - $basearch - Source
 baseurl=http://<%= scope.lookupvar('yum::epel_repo_mirror') %>/epel/testing/<%= scope.lookupvar('yum::params::epel_os_version') %>/SRPMS
 enabled=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
+gpgkey=https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-<%= scope.lookupvar('yum::params::epel_os_version') %>
 gpgcheck=1
 priority=51
