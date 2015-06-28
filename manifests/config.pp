@@ -10,7 +10,7 @@ class yum::config {
   }
 
   $::yum::params::default_repos.each |$repo| {
-    file { "${::yum::params::confdir}/${repo}":
+    file { "${::yum::params::confdir}/${repo}.repo":
       ensure => present,
       owner  => 'root',
       group  => $::yum::params::root_group,
