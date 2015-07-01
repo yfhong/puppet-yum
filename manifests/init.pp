@@ -12,7 +12,9 @@ class yum (
   $plugin_package_ensure = $::yum::params::plugin_package_ensure,
   $base_repo_mirror      = $::yum::params::base_repo_mirror,
   $epel_repo_mirror      = $::yum::params::epel_repo_mirror,
-  $repos                 = {}, # till now only elasticsearch available.
+  $mysql_os_version      = $::operatingsystemmajrelease,
+  $elasticsearch_version = '1.6',
+  $logstash_version      = '1.5',
 ) inherits ::yum::params {
 
   # validate parameters here

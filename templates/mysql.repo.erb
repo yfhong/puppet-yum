@@ -1,0 +1,84 @@
+# Managed by puppet
+[mysql-connectors-community]
+name=MySQL Connectors Community
+baseurl=https://repo.mysql.com/yum/mysql-connectors-community/el/<%= scope.lookupvar('yum::mysql_os_version') %>/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=https://repo.mysql.com/RPM-GPG-KEY-mysql
+priority=30
+
+[mysql-tools-community]
+name=MySQL Tools Community
+baseurl=https://repo.mysql.com/yum/mysql-tools-community/el/<%= scope.lookupvar('yum::mysql_os_version') %>/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=https://repo.mysql.com/RPM-GPG-KEY-mysql
+priority=30
+
+# Enable to use MySQL 5.5
+[mysql55-community]
+name=MySQL 5.5 Community Server
+baseurl=https://repo.mysql.com/yum/mysql-5.5-community/el/<%= scope.lookupvar('yum::mysql_os_version') %>/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=https://repo.mysql.com/RPM-GPG-KEY-mysql
+priority=30
+
+# Enable to use MySQL 5.6
+[mysql56-community]
+name=MySQL 5.6 Community Server
+baseurl=https://repo.mysql.com/yum/mysql-5.6-community/el/<%= scope.lookupvar('yum::mysql_os_version') %>/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=https://repo.mysql.com/RPM-GPG-KEY-mysql
+priority=30
+
+# Note: MySQL 5.7 is currently in development. For use at your own risk.
+# Please read with sub pages: https://dev.mysql.com/doc/relnotes/mysql/5.7/en/
+[mysql57-community-dmr]
+name=MySQL 5.7 Community Server Development Milestone Release
+baseurl=https://repo.mysql.com/yum/mysql-5.7-community/el/<%= scope.lookupvar('yum::mysql_os_version') %>/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=https://repo.mysql.com/RPM-GPG-KEY-mysql
+priority=30
+
+[mysql-connectors-community-source]
+name=MySQL Connectors Community - Source
+baseurl=https://repo.mysql.com/yum/mysql-connectors-community/el/<%= scope.lookupvar('yum::mysql_os_version') %>/SRPMS
+enabled=0
+gpgcheck=1
+gpgkey=https://repo.mysql.com/RPM-GPG-KEY-mysql
+priority=30
+
+[mysql-tools-community-source]
+name=MySQL Tools Community - Source
+baseurl=https://repo.mysql.com/yum/mysql-tools-community/el/<%= scope.lookupvar('yum::mysql_os_version') %>/SRPMS
+enabled=0
+gpgcheck=1
+gpgkey=https://repo.mysql.com/RPM-GPG-KEY-mysql
+priority=30
+
+[mysql55-community-source]
+name=MySQL 5.5 Community Server - Source
+baseurl=https://repo.mysql.com/yum/mysql-5.5-community/el/<%= scope.lookupvar('yum::mysql_os_version') %>/SRPMS
+enabled=0
+gpgcheck=1
+gpgkey=https://repo.mysql.com/RPM-GPG-KEY-mysql
+priority=30
+
+[mysql56-community-source]
+name=MySQL 5.6 Community Server - Source
+baseurl=https://repo.mysql.com/yum/mysql-5.6-community/el/<%= scope.lookupvar('yum::mysql_os_version') %>/SRPMS
+enabled=0
+gpgcheck=1
+gpgkey=https://repo.mysql.com/RPM-GPG-KEY-mysql
+priority=30
+
+[mysql57-community-dmr-source]
+name=MySQL 5.7 Community Server Development Milestone Release - Source
+baseurl=https://repo.mysql.com/yum/mysql-5.7-community/el/<%= scope.lookupvar('yum::mysql_os_version') %>/SRPMS
+enabled=0
+gpgcheck=1
+gpgkey=https://repo.mysql.com/RPM-GPG-KEY-mysql
+priority=30

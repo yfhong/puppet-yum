@@ -1,0 +1,8 @@
+# Managed by puppet
+[logstash]
+name=Logstash repository
+baseurl=http://packages.elasticsearch.org/logstash/<%= scope.lookupvar('yum::logstash_version') %>/centos
+gpgcheck=1
+gpgkey=http://packages.elasticsearch.org/GPG-KEY-elasticsearch
+enabled=1
+priority=30

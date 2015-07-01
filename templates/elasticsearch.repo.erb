@@ -1,0 +1,8 @@
+# Managed by puppet
+[elasticsearch]
+name=Elasticsearch repository
+baseurl=http://packages.elastic.co/elasticsearch/<%= scope.lookupvar('yum::elasticsearch_version') %>/centos
+gpgcheck=1
+gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+priority=30
