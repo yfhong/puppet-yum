@@ -20,6 +20,7 @@ class yum::config {
     }
   }
 
+  if ($repositories) {
   $repositories.each |$repo| {
     file { "${::yum::params::confdir}/${repo}.repo":
       ensure  => present,
@@ -27,5 +28,6 @@ class yum::config {
       group   => $::yum::params::root_group,
       content => template("yum/${repo}.repo.erb"),
     }
+  }
   }
 }
