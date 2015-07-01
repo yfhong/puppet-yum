@@ -3,7 +3,7 @@
 # This class is called from yum for service config.
 #
 class yum::config {
-  $repositories = hiera_hash('yum::repositories', undef)
+  $repositories = hiera_array('yum::repositories', undef)
 
   file { "${::yum::params::confdir}":
     ensure  => 'directory',
@@ -21,13 +21,13 @@ class yum::config {
   }
 
   if ($repositories) {
-  $repositories.each |$repo| {
-    file { "${::yum::params::confdir}/${repo}.repo":
-      ensure  => present,
-      owner   => 'root',
-      group   => $::yum::params::root_group,
-      content => template("yum/${repo}.repo.erb"),
+    $repositories.each |$repo| {
+      file { "${::yum::params::confdir}/${repo}.repo":
+        ensure  => present,
+        owner   => 'root',
+        group   => $::yum::params::root_group,
+        content => template("yum/${repo}.repo.erb"),
+      }
     }
-  }
   }
 }
